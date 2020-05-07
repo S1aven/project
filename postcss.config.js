@@ -4,6 +4,9 @@ module.exports = {
   syntax: "postcss-scss",
   parser: 'postcss-scss',
   plugins: [
+    require('postcss-url')({
+      url:'rebase'
+    }),
     require("postcss-easy-import")({
       extensions: ".pcss"
     }),

@@ -1,0 +1,141 @@
+.works-section {
+  height: 100vh;
+  min-height: 650px;
+  display: flex;
+  align-items: center;
+}
+
+.works {
+  display: flex;
+
+  .works__slider {
+    margin-left: 9%;
+    width: 100%;
+    z-index: 100;
+  }
+}
+
+.works-title {
+  line-height: 48px;
+  font-family: "Open Sans";
+  font-weight: 700;
+  font-size: 36px;
+  margin-left: 9%;
+  margin-bottom: 90px;
+}
+
+.works-slider__preview-pic {
+  width: 975px;
+  height: 545px;
+}
+
+.works-slider__pic {
+  width: 185px;
+  height: 104px;
+
+  &:hover {
+    border: 1px solid #ff9a00;
+  }
+}
+
+.works-slider__item {
+  position: relative;
+  display: inline-block;
+}
+
+.works-slider__list {
+  position: absolute;
+  bottom: 10%;
+  right: 0;
+  display: flex;
+}
+
+.worcs-slider__scroll {
+  position: absolute;
+  left: 100%;
+  bottom: 10%;
+}
+
+.worcs-slider__scroll-left {
+  background-color: #353e4e;
+  padding: 15px 20px;
+  display: inline-block;
+
+  &:hover {
+    background-color: #ff9a00;
+  }
+}
+
+.worcs-slider__scroll-right {
+  background-color: #353e4e;
+  padding: 15px 20px;
+  display: inline-block;
+
+  &:hover {
+    background-color: #ff9a00;
+  }
+}
+
+.works-content {
+  display: flex;
+  position: relative;
+  width: 45%;
+
+  .works-content__figure {
+    color: #e6e6e6;
+    font-family: "Open Sans";
+    font-size: 400px;
+    font-weight: 800;
+    line-height: 48px;
+    position: absolute;
+    bottom: 294px;
+    right: 97%;
+  }
+
+  .works-content__data {
+    width: 70%;
+  }
+
+  .works-content__title {
+    line-height: 48px;
+    color: #353e4f;
+    font-family: "Open Sans";
+    font-weight: 700;
+    font-size: 30px;
+    margin: 36px 0;
+  }
+
+  .works-content__desc {
+    line-height: 30px;
+    color: #333c49;
+    font-family: "Open Sans";
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 25px;
+    color: #716d69;
+  }
+
+  .works-content__link {
+    line-height: 48px;
+    color: #586ed3;
+    font-family: "Open Sans";
+    font-weight: 700;
+    font-size: 18px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      width: 15px;
+      height: 15px;
+      background: svg-load('link.svg', fill=#586ed3, width=100%, height=100%) center no-repeat;
+      margin-right: 20px;
+    }
+  }
+}

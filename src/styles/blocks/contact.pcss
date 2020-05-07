@@ -1,0 +1,108 @@
+.contact-section {
+  color: #fff;
+  margin-top: 190px;
+  position: relative;
+  top: 142px;
+  height: 100vh;
+
+  .contact-section__form {
+    margin: 0 9%;
+  }
+}
+
+.contact {
+  display: inline-block;
+}
+
+.contact-section__title {
+  line-height: 48px;
+  font-family: "Open Sans";
+  font-weight: 700;
+  font-size: 36px;
+  margin-bottom: 76px;
+}
+
+.contact__row {
+  display: flex;
+  margin-bottom: 33px;
+}
+
+.contact__block-right {
+  margin-left: 95px;
+}
+
+.contact__title {
+  line-height: 30px;
+  font-family: "Open Sans";
+  font-weight: 600;
+  font-size: 16px;
+  margin-left: 50px;
+  color: #716d69;
+}
+
+.contact__input {
+  line-height: 48px;
+  font-family: "Open Sans";
+  font-weight: 700;
+  font-size: 18px;
+  width: 100%;
+  color: #fff;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid #888888;
+  padding-bottom: 6px;
+  width: 380px;
+  padding-left: 50px;
+
+  &:hover {
+    border-bottom: 2px solid #ff9a00;
+  }
+
+  &::placeholder {
+    color: #fff;
+  }
+
+  &--textarea {
+    resize: none;
+    width: 850px;
+  }
+}
+
+.contact__input-user {
+  background: svg-load('user.svg', fill=#716d69, width=30px, height=30px) 0 no-repeat;
+
+  &:hover {
+    background: svg-load('user.svg', fill=#ff9a00, width=30px, height=30px) 0 no-repeat;
+  }
+}
+
+.contact__input-envelope {
+  background: svg-load('envelope.svg', fill=#716d69, width=30px, height=30px) 0 no-repeat;
+
+  &:hover {
+    background: svg-load('envelope.svg', fill=#ff9a00, width=30px, height=30px) 0 no-repeat;
+  }
+}
+
+.contact__input-chat {
+  background: svg-load('chat.svg', fill=#716d69, width=30px, height=30px) 0 no-repeat;
+
+  &:hover {
+    background: svg-load('chat.svg', fill=#ff9a00, width=30px, height=30px) 0 no-repeat;
+  }
+}
+
+.contact__button {
+  margin-top: 55px;
+}
+
+.contact__btn {
+  background-image: linear-gradient(90deg, #ea7300 0%, #f29400 100%);
+  color: #ffffff;
+
+
+  &:hover {
+    background-image: linear-gradient(90deg, #ff7f00 0%, #ff9d00 100%);
+  }
+}

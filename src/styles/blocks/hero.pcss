@@ -1,0 +1,43 @@
+.hero__bottom-btn {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.hero {
+  height: 100vh;
+  position: relative;
+  min-height: 650px;
+  color: #fff;
+  // background: url('../images/content/hero-bg.jpg') center center no-repeat;
+  // background-size: cover;
+}
+
+.hero__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-left: -160px;
+  margin-top: 50px;
+}
+
+.hero__bottom-btn {
+  line-height: 30px;
+  font-family: "Open Sans";
+  font-weight: 600;
+  font-size: 18px;
+  text-decoration: none;
+  display: flex;
+
+
+  &::after {
+    content: "";
+    width: 20px;
+    height: 30px;
+    margin-left: 20px;
+    background: svg-load('scroll.svg', fill=#fff, width=100%, height=100%) center center no-repeat;
+    background-size: cover;
+  }
+}

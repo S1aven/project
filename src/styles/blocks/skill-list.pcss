@@ -1,0 +1,103 @@
+.skills-row__title {
+  line-height: 48px;
+  font-family: "Open Sans";
+  font-weight: 700;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.skills-row__list {
+  display: flex;
+  padding-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.skills-row__item {
+  margin-right: 37px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.skill {
+  position: relative;
+
+  .skill__shape {
+    width: 165px;
+  
+    &--under {
+      stroke: #716d69;
+      stroke-width: 3px;
+      fill: transparent;
+    }
+  
+    &--above {
+      height: 200px;
+      fill: transparent;
+      stroke: #ff9a00;
+      stroke-width: 11px;
+      animation: skillProgress 100s linear infinite;
+      animation-play-state: paused;
+      stroke-dasharray: 502;
+      transform-origin: 50% 50%;
+      transform: rotate(180deg);
+      width: 200px;
+    }
+  
+    &--title {
+      position: absolute;
+      font-size: 18px;
+      stroke-width: 1px;
+      left: 50%;
+      top: 40%;
+      transform: translate(-50%);
+      text-align: center;
+      color: #716d69;
+      font-weight: 700;
+    }
+  }
+}
+// text(x="50%" y="50%" text-anchor='middle')
+
+// .skill__shape {
+//   width: 200px;
+
+
+//   &--under {
+//     stroke: #716d69;
+//     stroke-width: 8px;
+//     fill: transparent;
+//   }
+
+//   &--above {
+//     height: 200px;
+//     fill: transparent;
+//     stroke: #ff9a00;
+//     stroke-width: 15px;
+//     animation: skillProgress 100s linear infinite;
+//     animation-play-state: paused;
+//     stroke-dasharray: 502;
+//     transform-origin: 50% 50%;
+//     transform: rotate(180deg);
+//     width: 200px;
+//   }
+
+//   &--title {
+//     font-size: 18px;
+//     stroke-width: 1px;
+//     text-align: center;
+//     padding-bottom:0px;
+//     color: #716d69;
+//     font-weight: 700;
+//   }
+// }
+
+@keyframes skillProgress {
+  0% {
+    stroke-dashoffset:500;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}

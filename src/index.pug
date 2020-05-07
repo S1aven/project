@@ -9,7 +9,226 @@ html(lang="en")
     title Portfolio | main page
   body
     .wrapper
-      .maincontent
-        +image('content/user.jpg', 'user-pic')
-        +icon('link', 'link-class')
-        .icon-bg
+      //- .maincontent
+      //-   +image('content/user.jpg', 'user-pic')
+      //-   +icon('link', 'link-class')
+      //-   .icon-bg
+      .welcome-section
+        .first-bg
+          section.hero
+            .container
+              header.header
+                .header__logo
+                  .logo СР
+                .header__btns
+                  nav.menu
+                    - var items = ['Главная', 'Обо мне', 'Навыки', 'Работы', 'Отзывы', 'Связаться'];
+                    ul.menu__list
+                      each item in items
+                        li.menu__item
+                          a.menu__link #{item}
+                .header__links
+                  - var icons = ['insta', 'vk', 'github']
+                    ul.socials
+                      each item in icons
+                        li.socials__item
+                          a(href="#").socials__link
+                           +icon(item, 'socials__icon')
+                
+              .hero__content
+                .user-data
+                  .user-data__desc Личнай сайт<br/>веб разработчика
+                  h1.user-data__name Сергей<br/>Руднев
+
+
+              a(href="#").hero__bottom-btn.scroll-down-btn Скролл
+
+          section.about-section
+            .container
+              .about
+                .about__user-data
+                  .user-info
+                    .user-info__avatar
+                      .avatar
+                        +image('content/user.jpg', 'avatar__img')
+                  .user-info__content
+                    -
+                      var userdata = [
+                        ['Проживаю:', 'Москва'],
+                        ['Возраст:', '30 лет'],
+                        ['Родился:', '27 февраля 1990']
+                      ];
+                    table.user-info__data
+                      tbody.user-info__data-body
+                      each row in userdata
+                        tr
+                          td #{row[0]}
+                          td #{row[1]}
+
+                .about__content
+                  .about__disclamer Привет, меня зовут
+                  h2.about__title Сергей Руднев
+                  .about__desc
+                    p Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+                  .about__ps
+                    p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+
+          section.values-section
+            .container
+              +image('content/arms.png', 'arms-pic')
+              .values__title
+                .values-section__title-content
+                  .longtitle
+                    h2.longtitle__text Чем я могу быть полезен вам
+                    .longtitle__desc
+                      p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+
+              .values-section__content
+                -
+                  var skills = [
+                    ['Front-end', ['HTML5', 'CSS3', 'javascript', 'jquery и Vue.js'],[25,15,75,25]],
+                    ['Workflow', ['GIT', 'Terminal', 'Gulp', 'Webpack'],[15,25,50,35]]
+                  ];
+
+                ul.skills-list
+                  each item in skills
+                    li.skills-list__item.skills-row
+                      .skills-row__title #{item[0]}
+                      ul.skills-row__list
+                        each skill,index in item[1]
+                          li.skills-row__item: +skill(item[2][index],skill)
+        
+        section.works-section
+          .container
+            h2.works-title Мои работы
+            .works
+              .works__slider           
+                .works-slider
+                  .works-slider__item
+                    .worcs-slider__scroll
+                      a.worcs-slider__scroll-left(href="#")
+                        +icon('Short Arrow', 'scroll')
+                      a.worcs-slider__scroll-right(href="#")
+                        +icon('Short Arrow', 'scroll scrloll__left-scr')
+
+                    .works-slider__preview                 
+                      +image('content/slider1.jpg', 'works-slider__preview-pic')
+
+                      ul.works-slider__list
+                        li.works-slider__item
+                          a.works-slider__link(href='#')
+                            +image('content/slider2.jpg', 'works-slider__pic')
+                        li.works-slider__item
+                          a.works-slider__link(href='#')
+                            +image('content/slider3.jpg', 'works-slider__pic')
+                        li.works-slider__item
+                          a.works-slider__link(href='#')
+                            +image('content/slider4.jpg', 'works-slider__pic')
+                        li.works-slider__item
+                          a.works-slider__link(href='#')
+                            +image('content/slider5.jpg', 'works-slider__pic')
+              .works-content
+                .works-content__figure 2
+                .works-content__data
+                  .tags
+                    - var tags = ['HTML', 'CSS', 'Javascript']
+                      ul.tags__list
+                        each item in tags
+                          li.tags__item                   
+                            .tags__elem #{item}
+                  h3.works-content__title Сайт школы образования
+                  .works-content__desc
+                    p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+                  a.works-content__link(href="#") Посмотреть сайт
+        
+        .second-bg
+          section.reviews-section
+            .container
+              +image('content/sheet.png', 'reviews-section__sheet')
+              h2.reviews-title Что обо мне говорят
+              a.scroll-left(href="#")
+                +icon('Short Arrow', 'scroll scrloll__left-scr')
+              a.scroll-right(href="#")
+                +icon('Short Arrow', 'scroll')
+
+              .reviews-slider
+                .reviews-slider__item
+                  .reviews-slider__left
+                    .reviews__desc
+                      p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                    .reviews__user-data
+                      .reviews__user-avatar
+                        .avatar
+                          +image('content/user.jpg', 'avatar__img')
+                      .reviews__user-info
+                        h3.reviews__user-name Ковальчук Дмитрий
+                        span.reviews__user-info Основатель Loftschool
+
+                  .reviews-slider__right
+                    .reviews__desc
+                      p Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах.
+                    .reviews__user-data
+                      .reviews__user-avatar
+                        .avatar
+                          +image('content/user.jpg', 'avatar__img')
+                      .reviews__user-info
+                        h3.reviews__user-name Владимир Сабанцев
+                        span.reviews__user-info Преподаватель
+
+          section.contact-section
+            .container
+              .contact-section__form
+                h2.contact-section__title Связаться со мной
+                form.contact              
+                  .contact__row
+                    label.contact__block
+                      .contact__title Введите ваше имя                      
+                      input.contact__input.contact__input-user(type="text", name="name", required, placeholder="Руднев Сергей")
+                      .error
+                    label.contact__block.contact__block-right
+                      .contact__title Введите ваш email
+                      input.contact__input.contact__input-envelope(type="text", name="name", required, placeholder="loftschool@study.com")
+                      .error
+                      
+                  .contact__row
+                    label.contact__block
+                      .contact__title Сообщение к письму
+                      textarea.contact__input.contact__input-chat.contact__input--textarea(name="comment", required, placeholder="Требуется ваша помощь в создании сайта. Интересуют сроки и цена вопроса")
+                      .error
+                  .contact__button
+                    button.contact__btn.btn(type="submit", name="send") Отправить
+
+        footer.footer
+          .container
+            .footer-content
+              .footer-content__left
+                .footer-content__year 2019
+                .footer-content__data
+                  h1.footer-content__name Сергей<br/>Руднев                
+                  .footer-content__desc Личнай сайт<br/>веб разработчика
+              .footer-content__right
+                .footer-content__btns
+                  nav.menu
+                    - var items = ['Главная', 'Обо мне', 'Навыки', 'Работы', 'Отзывы', 'Связаться'];
+                    ul.menu__list
+                      each item in items
+                        li.menu__item
+                          a.menu__link.menu__link-footer #{item}
+                .footer-data
+                  .footer-data__left
+                    p Этот сайт я сделал в рамках обучения в Школе онлайн образования Loftschool
+                    .footer-data__links
+                      - var icons = ['insta', 'vk', 'github']
+                        ul.socials
+                          each item in icons
+                            li.socials__item.socials__item-footer
+                              a(href="#").socials__link.socials__link-footer
+                                +icon(item, 'socials__icon')
+                  .footer-data__right
+                    p.footer-data__quote Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
+                    .footer-data__author Martin Golding
+
+
+                  
+                  
+
