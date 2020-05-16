@@ -1,0 +1,52 @@
+script(type='text/x-template')#slider-container
+  .works
+    display(
+      :currentWork='currentWork'
+      :works='works'
+      @slide='handleSlide'
+    )
+    info(
+      :currentWork='currentWork'
+    )
+   
+script(type='text/x-temlate')#slider-display
+  .works__slider       
+    .works-slider
+      .works-slider__item
+        btns(
+          @slide="$emit('slide', $event)"
+        )
+        .works-slider__preview
+          img(:src='currentWork.photo').works-slider__preview-pic              
+          thumbs(
+            :works='works'
+          )
+
+script(type='text/x-temlate')#slider-thumbs
+  ul.works-slider__list
+    li.works-slider__item(v-for='work in works' :key='work.id')
+      a.works-slider__link(href='#')
+        img(:src='work.photo').works-slider__pic
+
+script(type='text/x-temlate')#slider-btns
+  .worcs-slider__scroll
+    a(@click.prevent="$emit('slide', 'left')").worcs-slider__scroll-left
+      +icon('Short Arrow', 'scroll')
+    a(@click.prevent="$emit('slide', 'right')").worcs-slider__scroll-right
+      +icon('Short Arrow', 'scroll scrloll__left-scr')
+
+script(type='text/x-temlate')#slider-info
+  .works-content
+    .works-content__figure 2
+    .works-content__data
+      tags
+      h3.works-content__title {{currentWork.title}}
+      .works-content__desc
+        p {{currentWork.desc}}
+      a.works-content__link(:href="currentWork.link") Посмотреть сайт
+
+script(type='text/x-temlate')#slider-tags
+  .tags
+    ul.tags__list
+      li.tags__item                   
+        .tags__elem

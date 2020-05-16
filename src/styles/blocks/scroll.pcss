@@ -14,11 +14,17 @@
   border-radius: 50%;
   height: 50px;
   width: 50px;
-  left: 40%;
-  top: 0;
+  left: 560px;
+  top: 5%;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: transparent;
+
+  @include phones {
+    top: 157%;
+    left: 60%;
+  }
 }
 
 .scroll-left {
@@ -27,9 +33,43 @@
   border-radius: 50%;
   height: 50px;
   width: 50px;
-  left: 36%;
-  top: 0;
+  left: 480px;
+  top: 5%;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: transparent;
+
+  @include phones {
+    top: 157%;
+    left: 25%;
+  }
+}
+
+.scroll-left_left {
+  color: #fff;
+  outline: none;
+
+  &:hover {
+    background-color: #ff9a00;
+  }
+
+  &:disabled {
+    color: gray;
+    background-color: transparent;
+  }
+}
+
+.scroll-right_right {
+  color: #fff;
+  outline: none;
+
+  &:hover {
+    background-color: #ff9a00;
+  }
+
+  &:disabled {
+    color: gray;
+    background-color: transparent;
+  }
 }

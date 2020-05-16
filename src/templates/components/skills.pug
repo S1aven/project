@@ -1,0 +1,23 @@
+script(type='text/x-template')#skills
+  .values-section__content
+    ul.skills-list
+        li.skills-list__item(v-for='category in skills' :key='category.title')
+          skills-row(
+            :category='category'
+          )
+
+script(type='text/x-temlate')#skills-row
+  .skills-row
+    .skills-row__title {{category.title}}
+    ul.skills-row__list
+      li.skills-row__item(v-for='skill in category.skills' :key='skill.id')
+        skill(
+          :skill='skill'
+        )
+
+script(type='text/x-temlate')#skill
+  .skill
+    svg(viewBox="0 0 200 200").skill__shape
+      circle(r="80" cx="100" cy="100").skill__shape--under      
+      circle(r="80" cx="100" cy="100" ref='circle' style=`animation-delay: -${percent}s`).skill__shape--above
+    .skill__shape--title {{skill.title}}

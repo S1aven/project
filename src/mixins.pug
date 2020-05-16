@@ -5,10 +5,3 @@ mixin icon(name, className)
 
 mixin image(path, className)
   img(src=require(`images/${path}`) class=className)
-
-mixin skill(percent,text)
-  .skill
-    svg(viewBox="0 0 200 200").skill__shape
-      circle(r="80" cx="100" cy="100").skill__shape--under      
-      circle(r="80" cx="100" cy="100" style=`animation-delay: -${percent}s`).skill__shape--above
-    .skill__shape--title #{text}

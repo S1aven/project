@@ -1,12 +1,14 @@
 .contact-section {
   color: #fff;
-  margin-top: 190px;
   position: relative;
-  top: 142px;
-  height: 100vh;
+  padding: 195px 0 160px;
 
   .contact-section__form {
     margin: 0 9%;
+
+    @include desktop {
+      margin: 0 2.5%;
+    }
   }
 }
 
@@ -20,15 +22,31 @@
   font-weight: 700;
   font-size: 36px;
   margin-bottom: 76px;
+
+  @include tablets {
+    text-align: center;
+  }
+
+  @include phones {
+    font-size: 26px;
+  }
 }
 
 .contact__row {
   display: flex;
   margin-bottom: 33px;
+
+  @include phones {
+    flex-direction: column;
+  }
 }
 
 .contact__block-right {
   margin-left: 95px;
+
+  @include phones {
+    margin-left: 0;
+  }
 }
 
 .contact__title {
@@ -41,7 +59,6 @@
 }
 
 .contact__input {
-  line-height: 48px;
   font-family: "Open Sans";
   font-weight: 700;
   font-size: 18px;
@@ -53,7 +70,15 @@
   border-bottom: 2px solid #888888;
   padding-bottom: 6px;
   width: 380px;
-  padding-left: 50px;
+  padding: 20px 50px;
+
+  @include tablets {
+    width: auto;
+  }
+
+  @include phones {
+    padding: 20px 30px 20px 50px;
+  }
 
   &:hover {
     border-bottom: 2px solid #ff9a00;
@@ -66,6 +91,16 @@
   &--textarea {
     resize: none;
     width: 850px;
+    padding-bottom: 0;
+
+    @include tablets {
+      width: 755px;
+      overflow: hidden;
+    }
+
+    @include phones {
+      width: 310px;
+    }
   }
 }
 
@@ -95,6 +130,10 @@
 
 .contact__button {
   margin-top: 55px;
+
+  @include tablets {
+    text-align: center;
+  }
 }
 
 .contact__btn {

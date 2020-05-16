@@ -1,20 +1,41 @@
 .about-section {
-  // background: #414c63;
   color: #716d69;
-  // height: 100vh;
-  // min-height: 650px;
   position: relative;
-  top: 10.625rem;
-  height: 100vh;
+  padding-top: 170px;
+
+  @include desktop {
+    padding-top: 447px;
+  }
+
+  @include tablets {
+    padding-top: 145px;
+  }
 }
 
 .about {
   display: flex;
   justify-content: center;
+
+  @include desktop {
+    justify-content: space-between;
+  }
+
+  @include phones {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .about__user-data {
   margin-left: 60px;
+
+  @include desktop {
+    margin-left: 9%;
+  }
+
+  @include phones {
+    margin-left: 0;
+  }
 }
 
 .about__content {
@@ -22,6 +43,17 @@
   flex-direction: column;
   width: 30%;
   margin-left: 125px;
+
+  @include desktop {
+    margin-right: 9%;
+    width: 48%;
+  }
+
+  @include phones {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
 
   .about__disclamer {
     line-height: 30px;
@@ -45,6 +77,10 @@
     font-family: "Open Sans";
     font-weight: 600;
     font-size: 16px;
+
+    @include phones {
+      margin-bottom: 20px;
+    }
   }
 
   .about__ps {

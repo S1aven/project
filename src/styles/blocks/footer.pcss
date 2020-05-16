@@ -6,6 +6,10 @@
   align-items: center;
   justify-content: center;
   z-index: 1000;
+
+  @include tablets {
+    padding: 60px 0;
+  }
 }
 
 .footer-content {
@@ -13,14 +17,36 @@
   align-items: center;
   justify-content: center;
 
+  @include phones {
+    flex-direction: column;
+  }
+
   .footer-content__left {
     display: flex;
     margin-right: 140px;
+    align-self: end;
+
+    @include desktop {
+      flex-direction: column;
+      margin: 0 55px 0 25px;
+    }
+
+    @include phones {
+      margin: 0;
+    }
   }
 
   .footer-content__right {
     width: 54%;
-    margin-top: 70px;
+
+    @include desktop {
+      flex: 1;
+    }
+
+    @include phones {
+      width: inherit;
+      margin-top: 40px;
+    }
   }
 }
 
@@ -33,6 +59,10 @@
   margin-right: 60px;
   padding-top: 10px;
 
+  @include desktop {
+    margin-bottom: 23px;
+  }
+
   &::before {
     content: "\00A9";
     display: block;
@@ -44,6 +74,14 @@
   display: flex;
   margin-top: 50px;
 
+  @include tablets {
+    flex-direction: column;
+  }
+
+  @include phones {
+    margin-top: 20px;
+  }
+
   .footer-data__left {
     line-height: 30px;
     font-family: "Open Sans";
@@ -51,10 +89,28 @@
     font-size: 16px;
     width: 35%;
     margin-right: 17%;
+
+    @include desktop {
+      width: 56%;
+      margin-right: 0;
+    }
+
+    @include tablets {
+      width: 85%;
+    }
   }
 
   .footer-data__right {
     width: 50%;
+
+    @include desktop {
+      width: 70%;
+    }
+
+    @include tablets {
+      width: 100%;
+      margin-top: 60px;
+    }
   }
 
   .footer-data__author {
@@ -87,6 +143,11 @@
   font-size: 18px;
   text-transform: uppercase;
   margin-bottom: 15px;
+  width: 40%;
+
+  @include phones {
+    width: inherit;
+  }
 }
 
 .footer-content__desc {
@@ -94,4 +155,9 @@
   font-family: "Open Sans";
   font-weight: 400;
   font-size: 16px;
+  width: 70%;
+
+  @include phones {
+    width: inherit;
+  }
 }

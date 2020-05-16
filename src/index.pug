@@ -14,9 +14,13 @@ html(lang="en")
       //-   +icon('link', 'link-class')
       //-   .icon-bg
       .welcome-section
-        .first-bg
+        .train-bg
           section.hero
-            .container
+            +image('content/TrainBridge.png', 'parallax parallax_sky')
+            +image('content/TrainBridge(1).png', 'parallax parallax_hill')
+            +image('content/TrainBridge(2).png', 'parallax parallax_train')
+            +image('content/TrainBridge(3).png', 'parallax parallax_ground')
+            .container.hero-container
               header.header
                 .header__logo
                   .logo СР
@@ -34,7 +38,8 @@ html(lang="en")
                         li.socials__item
                           a(href="#").socials__link
                            +icon(item, 'socials__icon')
-                
+                .hamburger-menu
+                    +image('content/hamburgerMenu.png', 'hamburger-pic')
               .hero__content
                 .user-data
                   .user-data__desc Личнай сайт<br/>веб разработчика
@@ -83,97 +88,15 @@ html(lang="en")
                     .longtitle__desc
                       p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
 
-              .values-section__content
-                -
-                  var skills = [
-                    ['Front-end', ['HTML5', 'CSS3', 'javascript', 'jquery и Vue.js'],[25,15,75,25]],
-                    ['Workflow', ['GIT', 'Terminal', 'Gulp', 'Webpack'],[15,25,50,35]]
-                  ];
-
-                ul.skills-list
-                  each item in skills
-                    li.skills-list__item.skills-row
-                      .skills-row__title #{item[0]}
-                      ul.skills-row__list
-                        each skill,index in item[1]
-                          li.skills-row__item: +skill(item[2][index],skill)
+              #skills-component
         
         section.works-section
-          .container
+          .container.works-container
             h2.works-title Мои работы
-            .works
-              .works__slider           
-                .works-slider
-                  .works-slider__item
-                    .worcs-slider__scroll
-                      a.worcs-slider__scroll-left(href="#")
-                        +icon('Short Arrow', 'scroll')
-                      a.worcs-slider__scroll-right(href="#")
-                        +icon('Short Arrow', 'scroll scrloll__left-scr')
-
-                    .works-slider__preview                 
-                      +image('content/slider1.jpg', 'works-slider__preview-pic')
-
-                      ul.works-slider__list
-                        li.works-slider__item
-                          a.works-slider__link(href='#')
-                            +image('content/slider2.jpg', 'works-slider__pic')
-                        li.works-slider__item
-                          a.works-slider__link(href='#')
-                            +image('content/slider3.jpg', 'works-slider__pic')
-                        li.works-slider__item
-                          a.works-slider__link(href='#')
-                            +image('content/slider4.jpg', 'works-slider__pic')
-                        li.works-slider__item
-                          a.works-slider__link(href='#')
-                            +image('content/slider5.jpg', 'works-slider__pic')
-              .works-content
-                .works-content__figure 2
-                .works-content__data
-                  .tags
-                    - var tags = ['HTML', 'CSS', 'Javascript']
-                      ul.tags__list
-                        each item in tags
-                          li.tags__item                   
-                            .tags__elem #{item}
-                  h3.works-content__title Сайт школы образования
-                  .works-content__desc
-                    p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
-                  a.works-content__link(href="#") Посмотреть сайт
+            #slider-component
         
-        .second-bg
-          section.reviews-section
-            .container
-              +image('content/sheet.png', 'reviews-section__sheet')
-              h2.reviews-title Что обо мне говорят
-              a.scroll-left(href="#")
-                +icon('Short Arrow', 'scroll scrloll__left-scr')
-              a.scroll-right(href="#")
-                +icon('Short Arrow', 'scroll')
-
-              .reviews-slider
-                .reviews-slider__item
-                  .reviews-slider__left
-                    .reviews__desc
-                      p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
-                    .reviews__user-data
-                      .reviews__user-avatar
-                        .avatar
-                          +image('content/user.jpg', 'avatar__img')
-                      .reviews__user-info
-                        h3.reviews__user-name Ковальчук Дмитрий
-                        span.reviews__user-info Основатель Loftschool
-
-                  .reviews-slider__right
-                    .reviews__desc
-                      p Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах.
-                    .reviews__user-data
-                      .reviews__user-avatar
-                        .avatar
-                          +image('content/user.jpg', 'avatar__img')
-                      .reviews__user-info
-                        h3.reviews__user-name Владимир Сабанцев
-                        span.reviews__user-info Преподаватель
+        .foliage-bg
+          #reviews-component
 
           section.contact-section
             .container
@@ -204,8 +127,8 @@ html(lang="en")
               .footer-content__left
                 .footer-content__year 2019
                 .footer-content__data
-                  h1.footer-content__name Сергей<br/>Руднев                
-                  .footer-content__desc Личнай сайт<br/>веб разработчика
+                  h1.footer-content__name Сергей Руднев                
+                  .footer-content__desc Личнай сайт веб разработчика
               .footer-content__right
                 .footer-content__btns
                   nav.menu
@@ -228,7 +151,7 @@ html(lang="en")
                     p.footer-data__quote Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
                     .footer-data__author Martin Golding
 
-
+    include ./templates/entry.pug
                   
                   
 

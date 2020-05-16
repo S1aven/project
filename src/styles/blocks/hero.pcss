@@ -1,17 +1,12 @@
-.hero__bottom-btn {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
 .hero {
   height: 100vh;
   position: relative;
   min-height: 650px;
   color: #fff;
-  // background: url('../images/content/hero-bg.jpg') center center no-repeat;
-  // background-size: cover;
+}
+
+.hero-container {
+  z-index: 400;
 }
 
 .hero__content {
@@ -21,6 +16,17 @@
   transform: translate(-50%, -50%);
   margin-left: -160px;
   margin-top: 50px;
+  z-index: 400;
+
+  @include desktop {
+    margin-top: 0;
+    margin-left: 0;
+    top: 42%;
+  }
+
+  @include tablets {
+    top: 30%;
+  }
 }
 
 .hero__bottom-btn {
@@ -30,7 +36,20 @@
   font-size: 18px;
   text-decoration: none;
   display: flex;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 400;
 
+  @include desktop {
+    bottom: 220px;
+    left: 52.5%;
+  }
+
+  @include tablets {
+    display: none;
+  }
 
   &::after {
     content: "";
@@ -39,5 +58,12 @@
     margin-left: 20px;
     background: svg-load('scroll.svg', fill=#fff, width=100%, height=100%) center center no-repeat;
     background-size: cover;
+  }
+
+  &:hover {
+    color: #ff9a00;
+    display: block;
+    padding-right: 20px;
+    background: svg-load('scroll.svg', fill=#ff9a00, width=100%, height=100%) 108% no-repeat;
   }
 }

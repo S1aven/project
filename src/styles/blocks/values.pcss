@@ -3,23 +3,49 @@
   position: relative;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
-  min-height: 650px;
+  padding: 350px 0 115px;
   color: #fff;
 
+  @include tablets {
+    padding: 265px 0 316px;
+  }
+
   .values-section__title-content {
-    margin-left: 16%;
+    margin-left: 17%;
+
+    @include tablets {
+      margin-left: 0;
+    }
   }
 
   .values-section__content {
-    margin-left: 42%;
+    margin-left: 43.5%;
     margin-top: 77px;
+
+    @include desktop {
+      margin-left: 35.5%;
+    }
+
+    @include tablets {
+      display: flex;
+      justify-content: center;
+      margin-left: 0;
+      margin-top: 40px;
+    }
   }
 }
 
 .values__title {
-  width: 50%;
+  width: 40%;
   margin: 0 auto;
+
+  @include desktop {
+    width: 65%;
+  }
+
+  @include phones {
+    width: 100%;
+  }
 }
 
 

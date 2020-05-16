@@ -1,5 +1,27 @@
 .arms-pic {
   position: absolute;
-  top: 0;
   left: 0;
+
+  @include desktop {
+    left: -100px;
+    width: 500px;
+    top: 650px;
+    height: 705px;
+  }
+
+  @include tablets {
+    transform: rotate(-90deg);
+    left: 250px;
+    top: 905px;
+    width: 335px;
+    height: 486px;
+  }
+
+  @include phones {
+    bottom: -48px;
+    top: inherit;
+    left: 45px;
+    width: 250px;
+    height: 350px;
+  }
 }

@@ -5,3 +5,19 @@
   font-size: 16px;
   margin-top: 60px;
 }
+
+.user-info {
+
+  @include phones {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.user-info__avatar {
+  width: 210px;
+
+  @include phones {
+    width: 175px;
+  }
+}

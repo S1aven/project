@@ -1,0 +1,22 @@
+script(type='text/x-template')#reviews-container 
+  section.reviews-section(@click='checkArrows' @touchrnd='checkArrows')
+    .container
+      +image('content/sheet.png', 'reviews-section__sheet')
+      .reviews-container__title
+        h2.reviews-title Что обо мне говорят
+        button.scroll-left.scroll-left_left(@click="previous" :disabled='true')
+          +icon('Short Arrow', 'scroll scrloll__left-scr')
+        button.scroll-right.scroll-right_right(@click="next" :disabled='false')
+          +icon('Short Arrow', 'scroll')
+
+      flickity(ref="flickity" :options="flickityOptions").reviews-slider
+        .reviews-slider__item(v-for='review in reviews' :key='review.id')
+          .reviews__desc
+            p {{review.text}}             
+          .reviews__user-data
+            .reviews__user-avatar
+              .avatar
+                img(:src='review.authorPic').avatar__img
+            .reviews__user-info
+              h3.reviews__user-name {{review.authorName}}
+              span.reviews__user-info {{review.authorOcc}}
